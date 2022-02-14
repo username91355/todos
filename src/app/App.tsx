@@ -1,12 +1,19 @@
 import React from 'react';
-import './App.css';
+import s from './App.module.css';
+import {Route, Routes} from 'react-router-dom';
+import {Main} from '../pages/main/Main';
+import {Todos} from '../pages/todos/Todos';
+import {Header} from '../components/layout/header/Header';
 
-function App() {
+export const App: React.FC = () => {
+
     return (
-        <div className="App">
-            test
+        <div className={s.app}>
+            <Header/>
+            <Routes>
+                <Route path={'/'} element={<Main/>}/>
+                <Route path={'/todos'} element={<Todos/>}/>
+            </Routes>
         </div>
     );
-}
-
-export default App;
+};

@@ -1,5 +1,5 @@
-import {ITodo, todosAPI} from '../../api/todos-api';
-import {TAppThunk} from '../store';
+import {ITodo, todosAPI} from '../../../api/todos-api';
+import {TAppThunk} from '../../store';
 
 const SET_TODOS = 'todolist/todosReducer/SET_TODOS';
 const EDIT_TODO = 'todolist/todosReducer/EDIT_TODO';
@@ -65,7 +65,7 @@ export const createTodo = (title: string): TAppThunk => async dispatch => {
 
 export const editTodo = (id: number, title: string, completed: boolean): TAppThunk => async dispatch => {
     try {
-        await todosAPI.createTodo(1, id, title, completed);
+        await todosAPI.editTodo(1, id, title, completed);
 
         dispatch(editTodoAC({userId: 1, id, title, completed}));
 

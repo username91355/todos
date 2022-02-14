@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import s from '../AddTodoModal/AddTodoModal.module.css';
-import {Input} from '../Input/Input';
-import {Button} from '../Button/Button';
+import {Input} from '../../common/Input/Input';
+import {Button} from '../../common/Button/Button';
 import {useDispatch} from 'react-redux';
-import {editTodo} from '../../store/reducers/todos-reducer/todos-reducer';
+import {editTodo} from '../../../store/reducers/todos-reducer/todos-reducer';
 
 export const EditTodoModal: React.FC<any> = props => {
 

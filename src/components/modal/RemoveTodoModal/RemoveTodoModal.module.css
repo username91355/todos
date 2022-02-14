@@ -1,0 +1,42 @@
+.removeResidentModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.removeResidentModal__card {
+    width: 400px;
+    height: 250px;
+    color: white;
+    background-color: var(--main-bg-color);
+    border-radius: 1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.removeResidentModal__title {
+    color: white;
+    border-bottom: 1px var(--main-color) solid;
+    margin: 1em;
+}
+
+.removeResidentModal__text {
+    margin: 1em;
+}
+
+
+.removeResidentModal__card_buttonBlock {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    margin: 1em;
+}

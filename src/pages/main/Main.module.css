@@ -1,0 +1,25 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3em;
+}
+
+.main__img_block {
+    flex: 0 0 20%;
+}
+
+.main__img {
+    width: 200px;
+}
+
+.main__description {
+    flex: 0 0 50%;
+    background-color: var(--main-color);
+    color: white;
+    padding: 3em;
+    border-radius: 1em;
+    font-size: 1.4em;
+    font-weight: 500;
+    letter-spacing: 2px;
+}

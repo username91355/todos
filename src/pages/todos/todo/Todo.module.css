@@ -1,0 +1,23 @@
+.todo {
+    margin: 1em;
+    padding: 1em;
+    background-color: var(--main-color);
+    border-radius: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo__body {
+    display: flex;
+}
+
+.todo__title {
+    font-size: 1.4em;
+    font-weight: 500;
+    color: white;
+}
+
+.todo__buttons {
+    display: flex;
+}

@@ -1,0 +1,28 @@
+.header {
+    height: 60px;
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__navbar {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__active_link {
+    font-size: 1.3em;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+}
+
+.header__inactive_link {
+    font-size: 1.3em;
+    font-weight: 600;
+    text-decoration: none;
+    color: #bedbff;
+}

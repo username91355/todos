@@ -1,11 +1,30 @@
 import React from 'react';
+import s from './Header.module.css';
+import {NavLink} from 'react-router-dom';
 
-const Header = () => {
+export const Header = () => {
     return (
-        <div>
-            
-            </div>
+        <header className={s.header}>
+            <nav className={s.header__navbar}>
+                <NavLink
+                    className={({isActive}) => (
+                        isActive
+                            ? s.header__active_link
+                            : s.header__inactive_link)}
+                    to={'/'}
+                >
+                    Main
+                </NavLink>
+                <NavLink
+                    className={({isActive}) => (
+                        isActive
+                            ? s.header__active_link
+                            : s.header__inactive_link)}
+                    to={'/todos'}
+                >
+                    Todos
+                </NavLink>
+            </nav>
+        </header>
     );
 };
-
-export default Header;

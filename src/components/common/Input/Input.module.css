@@ -1,0 +1,110 @@
+.input {
+    position: relative;
+    padding: 20px 10px;
+}
+
+.input__label {
+    color: transparent;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    z-index: -1;
+}
+
+.input__area {
+    font-size: inherit;
+    border: none;
+    background: transparent;
+    color: white;
+    padding-bottom: .1em;
+    border-bottom: 2px solid white;
+    width: 280px;
+}
+
+/*on-focus*/
+.input__area:focus {
+    outline: none;
+    border-bottom: 2px solid #259cd3;
+    transition: .5s;
+    caret-color: #259cd3;
+    box-shadow: 0 15px 10px rgb(10, 136, 196, .4);
+}
+
+.input__area:focus ~ .input__label {
+    font-size: .8em;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    transition: .5s;
+    color: #259cd3;
+    z-index: 0;
+}
+
+.input__area:focus::placeholder {
+    color: transparent;
+    transition: .3s;
+}
+
+.input__area:not(.input__area:focus)::placeholder {
+    color: #bbbbbb;
+    transition: .3s;
+}
+
+.input__area:focus ~ .input__label.input__toHaveValue {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: .8em;
+}
+
+/*not-focus*/
+.input__area:not(.input__area:focus) ~ .input__label {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    z-index: -1;
+    transition: .3s;
+}
+
+.input__area:not(.input__area:focus) {
+    border-bottom: 2px solid white;
+    transition: .5s;
+    caret-color: #259cd3;
+}
+
+.input__area:not(.input__area:focus) ~ .input__label.input__toHaveValue {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: .8em;
+    z-index: 0;
+    color: white;
+}
+
+/* error */
+.input__area:not(.input__area:focus).input__area_error {
+    border-bottom: 2px solid #EF5151;
+    box-shadow: 0 15px 10px rgb(189, 30, 30, 0.4);
+}
+
+.input__area:not(.input__area:focus) ~ .input__label.input__label_error {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: .8em;
+    z-index: 0;
+    color: #EF5151;
+}
+
+.input__area:not(.input__area:focus) ~ .input__label.input__toHaveValue.input__label_error {
+    color: #EF5151;
+}
+
+/* autofill styles*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    border-bottom: 2px solid #259cd3;
+    -webkit-text-fill-color: white;
+    transition: background-color 5000s ease-in-out 0s;
+}
