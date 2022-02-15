@@ -7,7 +7,7 @@ interface IProps extends React.HTMLProps<HTMLInputElement> {
     spanClassName?: string
 }
 
-export const Checkbox: React.FC<IProps> = props => {
+export const Checkbox: React.FC<IProps> = React.memo(props => {
 
     const {
         checked,
@@ -43,4 +43,4 @@ export const Checkbox: React.FC<IProps> = props => {
             </label>
         </div>
     );
-};
+});

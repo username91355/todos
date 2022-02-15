@@ -6,28 +6,28 @@ export const todosAPI = {
         return instance
             .get<ITodo[]>('/todos')
             .then(res => res.data)
-            .catch(err => err)
+            .catch(err => err);
     },
 
     createTodo(userId: number, id: number, title: string, completed: boolean): Promise<ITodo> {
         return instance
             .post<ITodo>('/todos', {userId, id, title, completed})
             .then(res => res.data)
-            .catch(err => err)
+            .catch(err => err);
     },
 
     editTodo(userId: number, id: number, title: string, completed: boolean): Promise<ITodo> {
         return instance
             .put<ITodo>(`/todos/${id}`, {userId, id, title, completed})
             .then(res => res.data)
-            .catch(err => err)
+            .catch(err => err);
     },
 
     deleteTodo(id: number): Promise<{}> {
         return instance
             .delete<{}>(`/todos/${id}`)
             .then(res => res.data)
-            .catch(err => err)
+            .catch(err => err);
     },
 };
 

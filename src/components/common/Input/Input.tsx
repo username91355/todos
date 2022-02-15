@@ -10,7 +10,7 @@ interface IProps extends React.HTMLProps<HTMLInputElement> {
     onEnter?: () => void
 }
 
-export const Input: React.FC<IProps> = props => {
+export const Input: React.FC<IProps> = React.memo(props => {
 
     const {
         placeholder, // I extract what could not be passed to input
@@ -62,4 +62,4 @@ export const Input: React.FC<IProps> = props => {
             </label>
         </div>
     );
-};
+});

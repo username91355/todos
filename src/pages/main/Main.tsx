@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Main.module.css';
 import logo from './../../assets/img/logo.png';
 
-export const Main = () => {
+export const Main: React.FC = () => {
     return (
         <div className={s.main}>
             <div className={s.main__img_block}>

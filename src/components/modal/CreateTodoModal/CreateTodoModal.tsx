@@ -1,15 +1,20 @@
 import React, {useState} from 'react';
-import s from './AddTodoModal.module.css';
+import s from './CreateTodoModal.module.css';
 import {useDispatch} from 'react-redux';
 import {Input} from '../../common/Input/Input';
 import {Button} from '../../common/Button/Button';
 import {createTodo} from '../../../store/reducers/todos-reducer/todos-reducer';
 
-export const AddTodoModal: React.FC<any> = props => {
+interface IProps {
+    toggleCreateMode: (isCreateMode: boolean) => void
+}
 
-    const {toggleCreateMode} = props;
-    const dispatch = useDispatch();
-    const [title, setTitle] = useState('');
+export const CreateTodoModal: React.FC<IProps> = props => {
+
+    const
+        {toggleCreateMode} = props,
+        dispatch = useDispatch(),
+        [title, setTitle] = useState('');
 
     const addTask = () => {
         dispatch(createTodo(title));

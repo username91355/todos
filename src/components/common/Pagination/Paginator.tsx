@@ -7,9 +7,14 @@ interface IProps {
     setCurrentPage: (value: number) => void
 }
 
-export const Paginator: React.FC<IProps> = props => {
+export const Paginator: React.FC<IProps> = React.memo(props => {
 
-    const {currentPage, totalItems, setCurrentPage} = props;
+    const {
+        currentPage,
+        totalItems,
+        setCurrentPage
+    } = props;
+
     const
         partsShow = 5,
         totalParts = Math.ceil(totalItems / 10),
@@ -18,6 +23,7 @@ export const Paginator: React.FC<IProps> = props => {
         rightPartBorder = portionNumber * partsShow;
 
     let pages = [];
+
     for (let i = 1; i <= totalParts; i++) {
         pages.push(i);
     }
@@ -34,31 +40,44 @@ export const Paginator: React.FC<IProps> = props => {
 
     return (
         <div className={s.pagination}>
-            {portionNumber > 1
-                && <button className={s.pagination__button}
-                           onClick={leftArrowHandle}>{'<'}</button>}
+            {portionNumber > 1 &&
+                <button
+                    className={s.pagination__button}
+                    onClick={leftArrowHandle}
+                >
+                    {'<'}
+                </button>
+            }
             <div className={s.pagination__pages}>
                 {
                     pages
                         .filter(i => i >= leftPartBorder && i <= rightPartBorder)
                         .map((i) => {
+
+                            const selectCurrentPage = () => {
+                                setCurrentPage(i);
+                            };
+
                             return <div
+
                                 key={i}
                                 className={
                                     currentPage === i
                                         ? s.pagination__active
                                         : ''
                                 }
-                                onClick={() => setCurrentPage(i)}>{i}</div>
+                                onClick={selectCurrentPage}>{i}</div>
                         })
                 }
             </div>
-            {portionNumber < totalParts / partsShow
-                && <button
+            {portionNumber < totalParts / partsShow &&
+                <button
                     className={s.pagination__button}
                     onClick={rightArrowHandle}
-                >{'>'}
-                </button>}
+                >
+                    {'>'}
+                </button>
+            }
         </div>
-    )
-};
+    );
+});

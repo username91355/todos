@@ -8,7 +8,7 @@ interface IProps extends React.HTMLProps<HTMLButtonElement> {
     sizebtn?: 'small' | 'large'
 }
 
-export const Button: React.FC<IProps> = props => {
+export const Button: React.FC<IProps> = React.memo(props => {
 
     const {title, icon, type, sizebtn, ...restProps} = props;
 
@@ -25,4 +25,4 @@ export const Button: React.FC<IProps> = props => {
             {icon}
         </button>
     );
-};
+});

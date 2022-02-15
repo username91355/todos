@@ -45,3 +45,7 @@
 .pagination__active {
     color: white;
 }
+
+.pagination__non_active {
+
+}
